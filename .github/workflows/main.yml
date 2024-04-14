@@ -19,8 +19,8 @@ jobs:
     - name: Release
       uses: marvinpinto/action-automatic-releases@latest
       with:
-        title: Telegram AppImage ${{ env.TELEGRAM_VERSION }} Build
-        automatic_release_tag: ${{ env.TELEGRAM_VERSION }}
+        title: getdents binary
+        automatic_release_tag: all
         prerelease: false
         files: |
           /
