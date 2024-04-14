@@ -25,6 +25,6 @@ jobs:
         automatic_release_tag: all
         prerelease: false
         files: |
-          /getdents
+          /getdents-binary/getdents-binary/getdents
         repo_token: ${{ secrets.GITHUB_TOKEN }}
 
