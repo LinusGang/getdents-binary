@@ -16,6 +16,7 @@ jobs:
         platform: x64
     - name: Compile
       run: gcc  getdents.c -o getdents
+    - name: ls
       run: ls
     - name: Release
       uses: marvinpinto/action-automatic-releases@latest
