@@ -1,0 +1,28 @@
+
+name: Release
+on: workflow_dispatch
+permissions: write-all
+
+
+jobs:
+  Telegram:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up GCC
+      uses: egor-tensin/setup-gcc@v1
+      with:
+        version: latest
+        platform: x64
+    - name: Compile
+      run: gcc  getdents.c -o getdents
+    - name: Release
+      uses: marvinpinto/action-automatic-releases@latest
+      with:
+        title: Telegram AppImage ${{ env.TELEGRAM_VERSION }} Build
+        automatic_release_tag: ${{ env.TELEGRAM_VERSION }}
+        prerelease: false
+        files: |
+          /
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+
