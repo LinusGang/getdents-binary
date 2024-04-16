@@ -16,6 +16,7 @@ jobs:
         platform: x64
     - name: Compile
       run: gcc  getdents.c -o getdents
+      run: gcc  getdents2.c -o getdents2
     - name: ls
       run: ls
     - name: Release
@@ -26,5 +27,6 @@ jobs:
         prerelease: false
         files: |
           getdents
+          getdents2
         repo_token: ${{ secrets.GITHUB_TOKEN }}
 
