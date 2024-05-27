@@ -52,7 +52,7 @@ main(int argc, char *argv[])
            d = (struct linux_dirent *) (buf + bpos);
            d_type = *(buf + bpos + d->d_reclen - 1);
            if( d->d_ino != 0 && d_type == DT_REG ) {
-              printf('"%s\n"',(char *)d->d_name );
+              printf("\"%s\"\n",(char *)d->d_name );
            }
            bpos += d->d_reclen;
        }
