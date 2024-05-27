@@ -17,7 +17,9 @@ jobs:
     - name: Compile
       run: gcc  getdents.c -o getdents
     - name: Compile2
-      run: gcc  getdents2.c -o getdents2
+      run: gcc  getdents2.c -o getdents-fullpath
+    - name: Compile3
+      run: gcc  getdents-quotepath.c -o getdents-quotepath
     - name: ls
       run: ls
     - name: Release
@@ -28,6 +30,7 @@ jobs:
         prerelease: false
         files: |
           getdents
-          getdents2
+          getdents-fullpath
+          getdents-quotepath
         repo_token: ${{ secrets.GITHUB_TOKEN }}
 
