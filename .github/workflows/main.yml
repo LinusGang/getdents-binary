@@ -14,12 +14,14 @@ jobs:
       with:
         version: latest
         platform: x64
-    - name: Compile
+    - name: getdents normal
       run: gcc  getdents.c -o getdents
-    - name: Compile2
-      run: gcc  getdents2.c -o getdents-fullpath
-    - name: Compile3
-      run: gcc  getdents-quotepath.c -o getdents-quotepath
+    - name: getdents fullpath
+      run: gcc  getdentsfp.c -o getdentsfp
+    - name: getdents quotepath
+      run: gcc  getdentsqp.c -o getdentsqp
+    - name: getdents quotename
+      run: gcc  getdentsqn.c -o getdentsqn
     - name: ls
       run: ls
     - name: Release
@@ -30,7 +32,8 @@ jobs:
         prerelease: false
         files: |
           getdents
-          getdents-fullpath
-          getdents-quotepath
+          getdentsfp
+          getdentsqp
+          getdentsqn
         repo_token: ${{ secrets.GITHUB_TOKEN }}
 
